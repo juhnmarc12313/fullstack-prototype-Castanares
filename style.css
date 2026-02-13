@@ -114,6 +114,14 @@ form input{
     background-color: white;
     border-radius: 8px;
 }
+.Verified{
+    background-color: rgb(189, 224, 189);
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    font-weight: 600;
+    
+}
 
 
 
