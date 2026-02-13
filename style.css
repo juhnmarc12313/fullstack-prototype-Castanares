@@ -9,25 +9,24 @@
     display: flex;
     height: 100px;
     width: 100%;
-    background-color: rgb(168, 168, 168);
-    gap: 1000px;
-    padding-left: 30px;
-    padding-right: 30px;
+    background-color: rgb(20, 20, 20);
+    gap: 1300px;
 }
 .link a{
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .title{
+    color: white;
     display: flex;
     justify-content: center;  
 }
-
-.main{
-    display: flex;
+/* home */
+.Home{
+    display: none;
     gap: 30px;
     justify-content: left;
     align-content: left;
@@ -35,23 +34,69 @@
     width: 400px;
     padding: 0 20px 0 20px;
 }
-
-h1{
-    gap: 20px;
+p{
     width: 450px;
 }
 
-p{
-    width: 400px;;
+h1{
+    margin-top: 20px;
+    width: 450px;
 }
-
 .p{
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 50px;
-    width: 400px;
-    background-color: rgb(250, 192, 202);
+    width:500px;
+    background-color: rgb(113, 182, 243);
 }
+
+.p strong{
+    color: rgb(7, 32, 7);
+    font-weight: 300;
+    font-family: Tahoma;
+}
+
+.local{
+    color: palevioletred;
+    font-weight: 300;
+    font-family: Tahoma;
+}
+
+.first-btn{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(7, 137, 243 );
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.Register{
+    display: none;
+}
+form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-text{
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    height: 40px;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 20px;
+}
+
+.second-btn{
+    display: flex;
+    gap: 10px;
+}
+
 
 
