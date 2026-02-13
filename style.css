@@ -122,7 +122,20 @@ form input{
     font-weight: 600;
     
 }
-
-
-
 /* login */
+.login{
+    padding: 20px;
+    display: none;
+}
+
+
+.profile{
+    padding: 20px;
+
+}
+
+.prf-box{
+    padding: 20px;
+    border: 1px solid;
+    width: 30%;
+}
