@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.nav-tabs{
+.not-loggedin{
     align-items: center;
     display: flex;
     height: 100px;
@@ -12,6 +12,21 @@
     background-color: rgb(20, 20, 20);
     gap: 1300px;
 }
+
+/* Admins */
+.admins{
+    align-items: center;
+    display: none;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(20, 20, 20);
+    gap: 1300px;
+}
+
+
+
+
+
 .link a{
     display: flex;
     justify-content: space-between;
@@ -139,3 +154,4 @@ form input{
     border: 1px solid;
     width: 30%;
 }
+
