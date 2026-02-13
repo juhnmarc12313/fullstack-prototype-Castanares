@@ -15,7 +15,7 @@
     <title>Fullstack App (Student Build)</title>
   </head>
   <body>
-
+    <!-- navigation -->
     <nav class="not-loggedin"> 
       <h1 class="title">Full Stack App</h1>
       <div class="link">
@@ -23,10 +23,6 @@
         <a href="">Register</a>
       </div>
     </nav>
-
-
-
-
 
     <!-- Admins -->
     <nav class="admins">
@@ -155,7 +151,92 @@
         
       </section>
 
+      <!-- Employees -->
+       <section class="employee">
+        <div class="separate">
+            <h1>Employee</h1>
+            <button type="button" class="btn btn-success">+ Add Employees</button>
+        </div>
+                    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Dept</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
 
+
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Hello</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>tidert</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>@twitter</td>
+                <td>tidert</td>
+                <td>tidert</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="add-edit">
+            <div class="ADD">ADD/Edit Employee</div>
+            <form action="">
+            <div class="input-text">
+                <label for="firstname">Employee ID</label>
+            <input type="text" id="firstname">
+            </div>
+
+            <div class="input-text">
+                <label for="email">User Email</label>
+            <input type="email" id="email">
+            </div>
+
+            <div class="input-text">
+                <label for="email">Position</label>
+            <input type="position" id="position">
+            </div>
+
+            <div class="input-text">
+                <label for="department">Department</label>
+            <input type="department" id="department">
+            </div>
+
+            <div class="input-text">
+                <label for="department">Date</label>
+            <input type="date" id="date">
+            </div>
+            
+            <div class="second-btn">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-secondary">Cancel</button>
+            </div>
+            
+        </form>
+        </div>
+
+
+
+
+       </section>
 
 
 

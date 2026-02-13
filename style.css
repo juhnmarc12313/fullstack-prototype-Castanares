@@ -146,6 +146,7 @@ form input{
 
 .profile{
     padding: 20px;
+    display: none;
 
 }
 
@@ -155,3 +156,29 @@ form input{
     width: 30%;
 }
 
+.employee{
+    padding: 20px;
+}
+
+.separate{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: center;
+}
+
+/* Employee */
+
+.add-edit{
+    padding: 20px;
+    border: 1px solid;
+    width: 450px;
+}
+
+.ADD{
+    background-color: #ecececec;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
