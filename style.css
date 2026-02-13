@@ -71,6 +71,10 @@ h1{
     margin-top: 20px;
 }
 
+
+
+
+/* register */
 .Register{
     display: none;
 }
@@ -99,4 +103,9 @@ form input{
 }
 
 
-
+.Verify-txt{
+    padding: 20px;
+    width: 30%;
+    background-color: white;
+    border-radius: 8px;
+}
