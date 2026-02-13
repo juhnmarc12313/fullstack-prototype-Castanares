@@ -103,6 +103,11 @@ form input{
 }
 
 
+/* verify email */
+.email{
+    display: none;
+}
+
 .Verify-txt{
     padding: 20px;
     width: 30%;
