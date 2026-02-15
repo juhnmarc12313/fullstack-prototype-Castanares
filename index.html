@@ -312,7 +312,7 @@
       </section>
 
       <!-- Accounts -->
-      <section class="" id="account-page">
+      <section class="page" id="account-page">
         <div class="Accounts">
           <div class="account-title">
             <h1>Accounts</h1>
@@ -401,6 +401,121 @@
           </div>
         </div>
       </section>
+
+      <section class="" id="request-page">
+        <div class="Requests">
+          <div class="reuse-title">
+            <h1>My Request</h1>
+            <button type="button" class="btn btn-success">+ New Request</button>
+          </div>
+          <p>You have no request yet.</p>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            +Create one
+          </button>
+        </div>
+      </section>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Request</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Type</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <h6>Items</h6>
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Item name"
+                />
+                <input
+                  type="number"
+                  class="form-control"
+                  value="1"
+                  style="max-width: 60px"
+                />
+                <button class="btn btn-outline-danger" type="button">×</button>
+              </div>
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Item name"
+                />
+                <input
+                  type="number"
+                  class="form-control"
+                  value="1"
+                  style="max-width: 60px"
+                />
+                <button class="btn btn-outline-danger" type="button">×</button>
+              </div>
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Item name"
+                />
+                <input
+                  type="number"
+                  class="form-control"
+                  value="1"
+                  style="max-width: 60px"
+                />
+                <button class="btn btn-outline-danger" type="button">×</button>
+              </div>
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Item name"
+                />
+                <input
+                  type="number"
+                  class="form-control"
+                  value="1"
+                  style="max-width: 60px"
+                />
+                <button class="btn btn-outline-danger" type="button">×</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary">
+                Submit Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="script.js"></script>

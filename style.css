@@ -256,3 +256,13 @@ form .checkbox{
     gap: 15px;
 }
 
+
+/* Request page */
+
+.reuse-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
