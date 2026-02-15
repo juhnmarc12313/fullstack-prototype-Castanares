@@ -9,14 +9,19 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Fullstack App (Student Build)</title>
   </head>
   <body>
     <!-- navigation -->
-    <nav class="not-loggedin"> 
+    <nav class="not-loggedin">
       <h1 class="title">Full Stack App</h1>
       <div class="link">
         <a href="">Login</a>
@@ -27,223 +32,279 @@
     <!-- Admins -->
     <nav class="admins">
       <h1 class="title">Full Stack App</h1>
-      
-        <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-        style="background-color: rgba(240, 255, 255, 0); border: none;">
-            Admin
+
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="background-color: rgba(240, 255, 255, 0); border: none"
+        >
+          Admin
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Employees</a></li>
-            <li><a class="dropdown-item" href="#">Accounts</a></li>
-            <li><a class="dropdown-item" href="#">Departments</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Employees</a></li>
+          <li><a class="dropdown-item" href="#">Accounts</a></li>
+          <li><a class="dropdown-item" href="#">Departments</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
         </ul>
-        </div>
+      </div>
     </nav>
-
-
     <main>
+      <!-- Home -->
+      <section class="page active" id="home-page">
+        <div class="Home">
+          <h1>Welcome to FUll-STACK App</h1>
+          <p>A static prototype before backend integration. Simulates:</p>
+          <ul>
+            <li>Email Registration + fake verification</li>
+            <li>Login with JWT-like token simulation</li>
+            <li>Role-based UI (Admin/User)</li>
+            <li>CRUD for Employees, Departments, Requests</li>
+          </ul>
 
-      <!-- home -->
-      <section class="Home">
-        <h1>Welcome to FUll-STACH App</h1>
-        <p>A static prototype before backend integration. Simulates:</p>
-        <ul>
-          <li>Email Registration + fake verification</li>
-          <li>Login with JWT-like token simulation</li>
-          <li>Role-based UI (Admin/User)</li>
-          <li>CRUD for Employees, Departments, Requests</li>
-        </ul>
+          <div class="p">
+            <p>
+              <strong>⚠️ Note:</strong>All data is stored on
+              <span class="local">localstorage</span>. Refresh to reset.
+            </p>
+          </div>
 
-        <div class="p">
-          <p>
-            <strong>⚠️ Note:</strong>All data is stored on
-            <span class="local">localstorage</span>. Refresh to reset.
-          </p>
+          <button class="first-btn">Get Started →</button>
         </div>
-
-        <button class="first-btn">Get Started →</button>
       </section>
 
-
-        <!-- Register -->
-
-      <section class="Register">
-        <h1>Register Account</h1>
-        <form action="">
+      <!-- Register -->
+      <section class="page" id="register-page">
+        <div class="Register">
+          <h1>Register Account</h1>
+          <form action="">
             <div class="input-text">
-                <label for="firstname">First Name</label>
-            <input type="text" id="firstname">
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" />
             </div>
 
             <div class="input-text">
-                <label for="lastname">Last Name</label>
-            <input type="text" id="lastname">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" />
             </div>
 
             <div class="input-text">
-                <label for="email">Email</label>
-            <input type="email" id="email">
+              <label for="email">Email</label>
+              <input type="email" id="email" />
             </div>
 
             <div class="input-text">
-                <label for="password">Password</label>
-            <input type="password" id="password">
+              <label for="password">Password</label>
+              <input type="password" id="password" />
             </div>
-            
+
             <div class="second-btn">
-                <button type="button" class="btn btn-success">Sign Up</button>
-                <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="button" class="btn btn-success">Sign Up</button>
+              <button type="button" class="btn btn-secondary">Cancel</button>
             </div>
-            
-        </form>
+          </form>
+        </div>
       </section>
 
       <!-- Verify Email -->
-      <section class="email">
-        <h1>Verify Your Email</h1>
+      <section class="page" id="email-page">
+        <div class="email">
+          <h1>Verify Your Email</h1>
 
-        <p class="Verify-txt">✅ A verification link has been sent to.</p>
+          <p class="Verify-txt">✅ A verification link has been sent to.</p>
 
-        <p>for demo purpose, click below to simulate verification:</p>
+          <p>for demo purpose, click below to simulate verification:</p>
 
-        <div class="third-btn">
-            <button type="button" class="btn btn-success">✅Simulate Email Verification</button>
+          <div class="third-btn">
+            <button type="button" class="btn btn-success">
+              ✅Simulate Email Verification
+            </button>
             <button type="button" class="btn btn-secondary">Go to Login</button>
+          </div>
         </div>
       </section>
 
-        <!-- Login page -->
-      <section class="login">
-        <br>
-        <p class="Verified">✅Email Verified You may now log in.</p>
-        <h1>Log in</h1>
-        <form action="">           
+      <!-- Login page -->
+      <section class="page" id="login-page">
+        <div class="login">
+          <br />
+          <p class="Verified">✅Email Verified You may now log in.</p>
+          <h1>Log in</h1>
+          <form action="">
             <div class="input-text">
-                <label for="email">Email</label>
-            <input type="email" id="email">
+              <label for="email">Email</label>
+              <input type="email" id="email" />
             </div>
 
             <div class="input-text">
-                <label for="password">Password</label>
-            <input type="password" id="password">
+              <label for="password">Password</label>
+              <input type="password" id="password" />
             </div>
-            
+
             <div class="second-btn">
-                <button type="button" class="btn btn-primary">Log In</button>
-                <button type="button" class="btn btn-secondary">Cancel</button>
-            </div>   
-        </form>
+              <button type="button" class="btn btn-primary">Log In</button>
+              <button type="button" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
       </section>
 
       <!-- Profile Page -->
-      <section class="profile">
-        <h1>My Profile</h1>
-        <div class="prf-box">
+      <section class="page" id="profile-page">
+        <div class="profile">
+          <h1>My Profile</h1>
+          <div class="prf-box">
             <h3>Admin User</h3>
             <p><strong>Email:</strong> <span>admin@example.com</span></p>
             <p><strong>Role:</strong> <span>Admin</span></p>
             <button type="button" class="btn btn-outline-primary">Edit</button>
+          </div>
         </div>
-        
       </section>
 
       <!-- Employees -->
-       <section class="employee">
-        <div class="separate">
+      <section class="page" id="employee-page">
+        <div class="employee">
+          <div class="separate">
             <h1>Employee</h1>
-            <button type="button" class="btn btn-success">+ Add Employees</button>
-        </div>
-                    <table class="table table-striped">
-        <thead>
-            <tr>
+            <button type="button" class="btn btn-success">
+              + Add Employees
+            </button>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Position</th>
                 <th scope="col">Dept</th>
                 <th scope="col">Actions</th>
-            </tr>
-        </thead>
+              </tr>
+            </thead>
 
-
-        <tbody>
-            <tr>
+            <tbody>
+              <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 <td>Hello</td>
                 <td></td>
-            </tr>
+              </tr>
 
-            <tr>
+              <tr>
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
                 <td>tidert</td>
-            </tr>
+              </tr>
 
-            <tr>
+              <tr>
                 <th scope="row">3</th>
                 <td>Larry the Bird</td>
                 <td>@twitter</td>
                 <td>tidert</td>
                 <td>tidert</td>
-            </tr>
-        </tbody>
-        </table>
+              </tr>
+            </tbody>
+          </table>
 
-        <div class="add-edit">
+          <div class="add-edit page" id="add-edit-page">
             <div class="ADD">ADD/Edit Employee</div>
             <form action="">
-            <div class="input-text">
+              <div class="input-text">
                 <label for="firstname">Employee ID</label>
-            <input type="text" id="firstname">
-            </div>
+                <input type="text" id="firstname" />
+              </div>
 
-            <div class="input-text">
+              <div class="input-text">
                 <label for="email">User Email</label>
-            <input type="email" id="email">
-            </div>
+                <input type="email" id="email" />
+              </div>
 
-            <div class="input-text">
+              <div class="input-text">
                 <label for="email">Position</label>
-            <input type="position" id="position">
-            </div>
+                <input type="position" id="position" />
+              </div>
 
-            <div class="input-text">
+              <div class="input-text">
                 <label for="department">Department</label>
-            <input type="department" id="department">
-            </div>
+                <input type="department" id="department" />
+              </div>
 
-            <div class="input-text">
+              <div class="input-text">
                 <label for="department">Date</label>
-            <input type="date" id="date">
-            </div>
-            
-            <div class="second-btn">
+                <input type="date" id="date" />
+              </div>
+
+              <div class="second-btn">
                 <button type="button" class="btn btn-success">Save</button>
                 <button type="button" class="btn btn-secondary">Cancel</button>
-            </div>
-            
-        </form>
+              </div>
+            </form>
+          </div>
         </div>
+      </section>
 
+      <!-- Departments -->
+      <section class="" id="department-page">
+        <div class="department">
+          <div class="dept-title">
+            <h1>Departments</h1>
+            <button type="button" class="btn btn-success">
+              + Add Department
+            </button>
+          </div>
 
-
-
-       </section>
-
-
-
-
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">Edit</button>
+                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>
+                  <button type="button" class="btn btn btn-outline-primary">Edit</button>
+                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>
+                  <button type="button" class="btn btn btn-outline-primary">Edit</button>
+                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
