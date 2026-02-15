@@ -252,7 +252,7 @@
       </section>
 
       <!-- Departments -->
-      <section class="" id="department-page">
+      <section class="page" id="department-page">
         <div class="department">
           <div class="dept-title">
             <h1>Departments</h1>
@@ -274,28 +274,131 @@
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>
-                  <button type="button" class="btn btn-outline-primary">Edit</button>
-                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                  <button type="button" class="btn btn-outline-primary">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    Delete
+                  </button>
                 </td>
               </tr>
               <tr>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>
-                  <button type="button" class="btn btn btn-outline-primary">Edit</button>
-                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                  <button type="button" class="btn btn-outline-primary">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    Delete
+                  </button>
                 </td>
               </tr>
               <tr>
                 <td>John</td>
                 <td>Doe</td>
                 <td>
-                  <button type="button" class="btn btn btn-outline-primary">Edit</button>
-                  <button type="button" class="btn btn btn-outline-danger">Delete</button>
+                  <button type="button" class="btn btn-outline-primary">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    Delete
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <!-- Accounts -->
+      <section class="" id="account-page">
+        <div class="Accounts">
+          <div class="account-title">
+            <h1>Accounts</h1>
+            <button type="button" class="btn btn-success">
+              + Add Accounts
+            </button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Verified</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>✅</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    Edit
+                  </button>
+                  <button type="button" class="btn-outline-warning">
+                    Reset password
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="Ad-edit">
+            <h1
+              style="
+                background-color: #ececec;
+                padding: 10px;
+                width: 400px;
+                border-radius: 10px;
+              "
+            >
+              Add/Edit Account
+            </h1>
+            <form action="">
+              <div class="input-text">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" />
+              </div>
+
+              <div class="input-text">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" />
+              </div>
+
+              <div class="input-text">
+                <label for="email">Email</label>
+                <input type="email" id="email" />
+              </div>
+
+              <div class="input-text">
+                <label for="password">Password</label>
+                <input type="password" id="password" />
+              </div>
+
+              <div class="input-text">
+                <label for="role">Role</label>
+                <input type="role" id="role" />
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" name="verified" id="verified" />
+                <label for="role">Verified</label>
+              </div>
+
+              <div class="second-btn">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>
