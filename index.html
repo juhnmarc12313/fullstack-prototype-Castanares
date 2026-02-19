@@ -19,18 +19,19 @@
 
     <title>Fullstack App (Student Build)</title>
   </head>
-  <body>
+  <body class="not-authenticated">
+
     <!-- navigation -->
-    <nav class="not-loggedin">
+    <nav class="nav-not-loggedin">
       <h1 class="title">Full Stack App</h1>
       <div class="link">
-        <a href="">Login</a>
-        <a href="">Register</a>
+        <a href="#/login" class="role-logged-out">Login</a>
+        <a href="#/register" class="role-logged-out">Register</a>
       </div>
     </nav>
 
     <!-- Admins -->
-    <nav class="admins">
+    <nav class="nav-admin">
       <h1 class="title">Full Stack App</h1>
 
       <div class="btn-group">
@@ -41,15 +42,16 @@
           aria-expanded="false"
           style="background-color: rgba(240, 255, 255, 0); border: none"
         >
-          Admin
+          <span id="nav-username">Admin</span>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#">Employees</a></li>
-          <li><a class="dropdown-item" href="#">Accounts</a></li>
-          <li><a class="dropdown-item" href="#">Departments</a></li>
+          <li><a class="dropdown-item role-logged-in" href="#profile">Profile</a></li>
+          <li><a class="dropdown-item role-logged-in" href="#request">Requests</a></li>
+          <li><a class="dropdown-item role-admin" href="#employee">Employees</a></li>
+          <li><a class="dropdown-item role-admin" href="#account">Accounts</a></li>
+          <li><a class="dropdown-item role-admin" href="#department">Departments</a></li>
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          <li><a class="dropdown-item role-logged-in" href="#logout">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -73,7 +75,7 @@
             </p>
           </div>
 
-          <button class="first-btn">Get Started →</button>
+          <button class="first-btn" onclick="goToRegister()">Get Started →</button>
         </div>
       </section>
 
@@ -84,34 +86,34 @@
           <form action="">
             <div class="input-text">
               <label for="firstname">First Name</label>
-              <input type="text" id="firstname" />
+              <input type="text" id="reg-firstname" />
             </div>
 
             <div class="input-text">
               <label for="lastname">Last Name</label>
-              <input type="text" id="lastname" />
+              <input type="text" id="reg-lastname" />
             </div>
 
             <div class="input-text">
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input type="email" id="reg-email" />
             </div>
 
             <div class="input-text">
               <label for="password">Password</label>
-              <input type="password" id="password" />
+              <input type="password" id="reg-password" />
             </div>
 
             <div class="second-btn">
               <button type="button" class="btn btn-success">Sign Up</button>
-              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="button" class="btn btn-secondary" onclick="navigateTo('#/')">Cancel</button>
             </div>
           </form>
         </div>
       </section>
 
       <!-- Verify Email -->
-      <section class="page" id="email-page">
+      <section class="page" id="verify-page">
         <div class="email">
           <h1>Verify Your Email</h1>
 
@@ -123,7 +125,7 @@
             <button type="button" class="btn btn-success">
               ✅Simulate Email Verification
             </button>
-            <button type="button" class="btn btn-secondary">Go to Login</button>
+            <button type="button" class="btn btn-secondary" onclick="navigateTo('#/')">Go to Login</button>
           </div>
         </div>
       </section>
@@ -132,22 +134,22 @@
       <section class="page" id="login-page">
         <div class="login">
           <br />
-          <p class="Verified">✅Email Verified You may now log in.</p>
+          <p class="Verified" id="verified-message" style="display: none;">✅Email Verified You may now log in.</p>
           <h1>Log in</h1>
           <form action="">
             <div class="input-text">
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input type="email" id="login-email" />
             </div>
 
             <div class="input-text">
               <label for="password">Password</label>
-              <input type="password" id="password" />
+              <input type="password" id="login-password" />
             </div>
 
             <div class="second-btn">
               <button type="button" class="btn btn-primary">Log In</button>
-              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="button" class="btn btn-secondary" onclick="navigateTo('#/')">Cancel</button>
             </div>
           </form>
         </div>
@@ -155,23 +157,25 @@
 
       <!-- Profile Page -->
       <section class="page" id="profile-page">
-        <div class="profile">
-          <h1>My Profile</h1>
-          <div class="prf-box">
-            <h3>Admin User</h3>
-            <p><strong>Email:</strong> <span>admin@example.com</span></p>
-            <p><strong>Role:</strong> <span>Admin</span></p>
-            <button type="button" class="btn btn-outline-primary">Edit</button>
-          </div>
-        </div>
-      </section>
+  <div class="profile">
+    <h1>My Profile</h1>
+    
+    <!-- View Mode -->
+    <div class="prf-box" id="profile-view">
+      <h3 id="profile-name">Loading...</h3>
+      <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+      <p><strong>Role:</strong> <span id="profile-role">Loading...</span></p>
+      <button type="button" class="btn btn-outline-primary" onclick="showEditProfile()">Edit</button>
+    </div>
+  </div>
+</section>
 
       <!-- Employees -->
       <section class="page" id="employee-page">
         <div class="employee">
           <div class="separate">
             <h1>Employee</h1>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" onclick="openAddEmployeeForm()">
               + Add Employees
             </button>
           </div>
@@ -179,7 +183,7 @@
             <thead>
               <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
+                <th scope="col">User</th>
                 <th scope="col">Position</th>
                 <th scope="col">Dept</th>
                 <th scope="col">Actions</th>
@@ -187,34 +191,11 @@
             </thead>
 
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Hello</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>tidert</td>
-              </tr>
-
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>@twitter</td>
-                <td>tidert</td>
-                <td>tidert</td>
-              </tr>
+              <!-- Populated by renderEmployeesTable() -->
             </tbody>
           </table>
 
-          <div class="add-edit page" id="add-edit-page">
+          <div class="add-edit page" id="add-edit-page" style="display: none;">
             <div class="ADD">ADD/Edit Employee</div>
             <form action="">
               <div class="input-text">
@@ -224,27 +205,27 @@
 
               <div class="input-text">
                 <label for="email">User Email</label>
-                <input type="email" id="email" />
+                <input type="email" id="email" placeholder="Must match existing account" />
               </div>
 
               <div class="input-text">
-                <label for="email">Position</label>
-                <input type="position" id="position" />
+                <label for="position">Position</label>
+                <input type="text" id="position" />
               </div>
 
               <div class="input-text">
                 <label for="department">Department</label>
-                <input type="department" id="department" />
+                <input type="text" id="department" />
               </div>
 
               <div class="input-text">
-                <label for="department">Date</label>
+                <label for="date">Hire Date</label>
                 <input type="date" id="date" />
               </div>
 
               <div class="second-btn">
-                <button type="button" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-success" onclick="saveEmployee()">Save</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelEmployeeForm()">Cancel</button>
               </div>
             </form>
           </div>
@@ -256,7 +237,7 @@
         <div class="department">
           <div class="dept-title">
             <h1>Departments</h1>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" onclick="addDepartment()">
               + Add Department
             </button>
           </div>
@@ -270,42 +251,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Edit
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    Delete
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Edit
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    Delete
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Edit
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    Delete
-                  </button>
-                </td>
-              </tr>
+              <!-- Populated by renderDepartmentsTable() -->
             </tbody>
           </table>
         </div>
@@ -316,7 +262,7 @@
         <div class="Accounts">
           <div class="account-title">
             <h1>Accounts</h1>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" onclick="openAddAccountForm()">
               + Add Accounts
             </button>
           </div>
@@ -331,27 +277,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>✅</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Edit
-                  </button>
-                  <button type="button" class="btn-outline-warning">
-                    Reset password
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    Delete
-                  </button>
-                </td>
-              </tr>
+              <!-- Populated by renderAccountsList() -->
             </tbody>
           </table>
 
-          <div class="Ad-edit">
+          <div class="Ad-edit" style="display: none;">
             <h1
               style="
                 background-color: #ececec;
@@ -385,53 +315,64 @@
 
               <div class="input-text">
                 <label for="role">Role</label>
-                <input type="role" id="role" />
+                <select class="form-select" id="role">
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
               </div>
 
               <div class="checkbox">
                 <input type="checkbox" name="verified" id="verified" />
-                <label for="role">Verified</label>
+                <label for="verified">Verified</label>
               </div>
 
               <div class="second-btn">
-                <button type="button" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-success" onclick="saveAccount()">Save</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelAccountForm()">Cancel</button>
               </div>
             </form>
           </div>
         </div>
       </section>
 
-      <section class="" id="request-page">
+
+      <!-- Request Page -->
+      <section class="page" id="request-page">
         <div class="Requests">
           <div class="reuse-title">
-            <h1>My Request</h1>
-            <button type="button" class="btn btn-success">+ New Request</button>
+            <h1>My Requests</h1>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#requestModal">
+              + New Request
+            </button>
           </div>
-          <p>You have no request yet.</p>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-success"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            +Create one
-          </button>
+          <table class="table table-striped" id="requests-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Items</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Populated by renderUserRequests() -->
+            </tbody>
+          </table>
+          <p id="no-requests-msg" style="display: none;">You have no requests yet.</p>
         </div>
       </section>
       <!-- Modal -->
       <div
         class="modal fade"
-        id="exampleModal"
+        id="requestModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="requestModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New Request</h5>
+              <h5 class="modal-title" id="requestModalLabel">New Request</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -441,75 +382,24 @@
             </div>
             <div class="modal-body">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
+                <label for="request-type" class="form-label">Type</label>
+                <select class="form-select" id="request-type">
+                  <option value="Equipment">Equipment</option>
+                  <option value="Leave">Leave</option>
+                  <option value="Resources">Resources</option>
+                </select>
               </div>
               <h6>Items</h6>
-              <div class="input-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Item name"
-                />
-                <input
-                  type="number"
-                  class="form-control"
-                  value="1"
-                  style="max-width: 60px"
-                />
-                <button class="btn btn-outline-danger" type="button">×</button>
+              <div id="items-container">
+                <!-- Dynamic items will be added here -->
               </div>
-              <div class="input-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Item name"
-                />
-                <input
-                  type="number"
-                  class="form-control"
-                  value="1"
-                  style="max-width: 60px"
-                />
-                <button class="btn btn-outline-danger" type="button">×</button>
-              </div>
-              <div class="input-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Item name"
-                />
-                <input
-                  type="number"
-                  class="form-control"
-                  value="1"
-                  style="max-width: 60px"
-                />
-                <button class="btn btn-outline-danger" type="button">×</button>
-              </div>
-              <div class="input-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Item name"
-                />
-                <input
-                  type="number"
-                  class="form-control"
-                  value="1"
-                  style="max-width: 60px"
-                />
-                <button class="btn btn-outline-danger" type="button">×</button>
-              </div>
+              <button type="button" class="btn btn-outline-primary btn-sm" onclick="addItemRow()">
+                + Add Item
+              </button>
             </div>
             <div class="modal-footer">
-              
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="submitRequest()">
                 Submit Request
               </button>
             </div>

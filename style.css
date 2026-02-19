@@ -4,12 +4,40 @@
   box-sizing: border-box;
 }
 
+/* ===========================================
+   PAGE VISIBILITY CONTROL
+   
+.page = hidden by default
+.page.active = visible (shows the page)=========================================== */
 .page {
   display: none;
 }
 .page.active {
+  display: block;
+}
+
+/* ===========================================
+   NAVIGATION VISIBILITY CONTROL
+   
+Show different nav based on login state=========================================== */
+
+/* When NOT logged in: show login nav, hide admin nav */
+body.not-authenticated .nav-not-loggedin {
+  display: flex;
+}
+body.not-authenticated .nav-admin {
   display: none;
 }
+
+/* When logged in: hide login nav, show admin nav */
+body.authenticated .nav-not-loggedin {
+  display: none;
+}
+body.authenticated .nav-admin {
+  display: flex;
+}
+
+/* Role-based visibility */
 body.not-authenticated .role-logged-in {
   display: none;
 }
@@ -23,7 +51,7 @@ body.is-admin .role-admin {
   display: block;
 }
 
-.not-loggedin {
+.nav-not-loggedin {
   align-items: center;
   display: flex;
   height: 100px;
@@ -33,7 +61,7 @@ body.is-admin .role-admin {
 }
 
 /* Admins */
-.admins {
+.nav-admin {
   align-items: center;
   display: none;
   height: 100px;
@@ -264,5 +292,44 @@ form .checkbox{
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.Requests {
+  padding: 20px;
+  width: 100%;
+}
+
+#requests-table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#no-requests-msg {
+  margin-top: 20px;
+  color: #666;
+}
+
+/* Status badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.text-dark {
+  color: #212529 !important;
 }
 
